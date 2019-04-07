@@ -1,0 +1,64 @@
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    background-image: url("/buildings.jpeg");
+    background-position: center;
+    background-size: cover;
+
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    left: 0px;
+    top: 0px;
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    z-index: -100;
+}
+
+.content {
+    max-width: 400pt;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px;
+    margin: 32px;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+
+    /* border: 4px solid rgba(255, 255, 255, .3); */
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.content > .title {
+    font-size: 32px;
+}
+
+.content > .title > .highlight {
+    background-color: #a66;
+}
+
+.content > .description {
+    padding: 32pt 0;
+}
+
+.mailing-container {
+    display: flex;
+}
+
+.mailing-container > .input {
+    width: 100%;
+    height: 32pt;
+}
+
+.mailing-container > .submit {
+    width: 32pt;
+    height: 32pt;
+}
