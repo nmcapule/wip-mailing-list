@@ -2,21 +2,85 @@
     <head>
         <title>contractor.ph</title>
         <link rel="stylesheet" href="index.css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css" integrity="sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq" crossorigin="anonymous">
     </head>
     <body>
-        <div class="background"></div>
-        <div class="content">
-            <div class="title">
-                contractor.ph <span class="highlight"> is brewing</span> 🍺
-            </div>
-            <div class="description">
-                Interested in pioneering DigiCon? Input your email address and we'll make sure to keep you updated with our mailing list! 
-            </div>
-            <form action="/mailing" method="POST" class="mailing-container">
-                <input name="email" type="text" class="input" autofocus="autofocus"/>
-                <input type="submit" value=">" class="submit"/>
-            </form>
+        <div class="background-container"></div>
+        <div class="design-container">
+            <img class="logo" src="logo.png" />
         </div>
+        <div class="main-container">
+            <div class="spacer"></div>
+            <div class="content">
+                <div class="blurb">
+                    We are launching in...
+                </div>
+                <div class="timers-container">
+                    <div class="timer -days" id="timer-days">
+                        <div class="number">--</div>
+                        <div class="label">days</div>
+                    </div>
+                    <div class="timer -hours" id="timer-hours">
+                        <div class="number">--</div>
+                        <div class="label">hours</div>
+                    </div>
+                    <div class="timer -minutes" id="timer-minutes">
+                        <div class="number">--</div>
+                        <div class="label">minutes</div>
+                    </div>
+                </div>
+                <div class="blurb">
+                    We are the FIRST and ONLY portal that matches contractors and suppliers to their clients and sourcing of their construction materials including project management.
+                </div>
+                <div class="blurb">
+                    While we are working hard to build the website, feel free to subscribe to our mailing list for updates.
+                </div>
+                <form action="/mailing" method="POST" class="mailing-container">
+                    <input name="email" type="text" class="input" autofocus="autofocus" placeholder="example@email.com"/>
+                    <input type="submit" value="Get Notified" class="submit"/>
+                </form>
+                <div class="blurb">
+                    You can also follow us on Facebook, Twitter, Instagram!
+                </div>
+                <div class="icons-container">
+                    <a href="#"><i class="icon fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="icon fab fa-twitter"></i></a>
+                    <a href="#"><i class="icon fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="credits">
+                Powered by Digicon Ventures Inc. (www.digicon.ph)
+            </div>
+        </div>
+        <script>
+            const TARGET_DATE = new Date("2019-08-01T00:00+00:00");
+
+            function displayCountdown(days, hours, minutes) {
+                document.querySelector("#timer-days > .number").innerText = days;
+                document.querySelector("#timer-hours > .number").innerText = hours;
+                document.querySelector("#timer-minutes > .number").innerText = minutes;
+            }
+
+            function main() {
+                window.setInterval(() => {
+                    const currDate = new Date();
+                    const msDiff = TARGET_DATE.getTime() - currDate.getTime();
+                    const msInDay = 1000 * 60 * 60 * 24;
+                    const daysToGo = Math.floor(msDiff / msInDay);
+
+                    const msInHour = 1000 * 60 * 60;
+                    const hoursToGo = Math.floor((msDiff % msInDay) / msInHour);
+
+                    const msInMinute = 1000 * 60;
+                    const minutesToGo = Math.floor(((msDiff % msInDay) % msInHour) / msInMinute);
+
+                    displayCountdown(daysToGo, hoursToGo, minutesToGo);
+                }, 1000);
+            }
+
+            main();
+        </script>
     </body>
 </html>
