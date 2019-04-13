@@ -189,6 +189,11 @@ body {
         display: none;
     }
 
+    .mailing-customer-container > .logo {
+        height: inherit;
+        width: 100%;
+    }
+
     .main-container {
         min-width: 0;
     }

@@ -1,2 +1,9 @@
 runtime: go
 env: flex
+
+env_variables:
+  POSTGRES_CONNECTION: "user=postgres password=password dbname=postgresql host=/cloudsql/INSTANCE_CONNECTION_NAME"
+  # POSTGRES_CONNECTION: "user=postgres password=password dbname=postgresql sslmode=disable"
+
+beta_settings:
+  cloud_sql_instances: "INSTANCE_CONNECTION_NAME"
