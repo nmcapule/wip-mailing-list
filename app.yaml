@@ -3,6 +3,7 @@ env: flex
 
 env_variables:
   POSTGRES_CONNECTION: "user=postgres password=password dbname=postgresql host=/cloudsql/INSTANCE_CONNECTION_NAME"
+  # -- This is for local development.
   # POSTGRES_CONNECTION: "user=postgres password=password dbname=postgresql sslmode=disable"
 
 beta_settings:

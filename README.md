@@ -20,7 +20,9 @@ $ dev_appserver.py app.yaml
 
 ## Deploying to AppEngine
 
-Run the ff. on the command line:
+1. Go configure `app.yaml` and uncomment the line for local instance connection string.
+
+2. Run the ff. on the command line:
 
 ```sh
 $ gcloud app deploy --version="<myversion>"
