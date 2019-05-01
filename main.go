@@ -4,12 +4,13 @@ import (
 	"database/sql"
 	"flag"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"sync"
 	"time"
 
-	"google.golang.org/appengine"
+	// "google.golang.org/appengine"
 
 	_ "github.com/lib/pq"
 )
@@ -72,6 +73,6 @@ func main() {
 	http.HandleFunc("/mailing", mailingListHandler)
 	http.HandleFunc("/", rootHandler)
 
-	// log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", *port), nil))
-	appengine.Main()
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", *port), nil))
+	// appengine.Main()
 }

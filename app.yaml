@@ -1,18 +1,8 @@
 runtime: go
 env: flex
 
-manual_scaling:
-  instances: 1
-
-resources:
-  cpu: 1
-  memory_gb: 0.5
-  disk_size_gb: 10
-
 env_variables:
-  POSTGRES_CONNECTION: "user=postgres password=password dbname=postgresql host=/cloudsql/INSTANCE_CONNECTION_NAME"
-  # -- This is for local development.
-  # POSTGRES_CONNECTION: "user=postgres password=password dbname=postgresql sslmode=disable"
+  POSTGRES_CONNECTION: "user=postgres password=password dbname=dbname host=/cloudsql/INSTANCE_CONNECTION_NAME"
 
 beta_settings:
   cloud_sql_instances: "INSTANCE_CONNECTION_NAME"
